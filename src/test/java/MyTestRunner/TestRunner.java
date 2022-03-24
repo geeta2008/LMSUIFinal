@@ -7,10 +7,11 @@ import io.cucumber.junit.CucumberOptions;
 //public class testrunner extends AbstractTestNGCucumberTests {
 @RunWith(Cucumber.class) 
 @CucumberOptions(features ="./src/test/resources/features",glue= {"StepDefinitions","AppHooks"},
+		
+          plugin={"pretty","html:target/HtmlReports"},
 		  monochrome = true,
-		  dryRun = true,
-		  strict = true,
-		  plugin={"pretty","html:target/HtmlReports"}
+		  dryRun = false,
+		  strict = true
 
 )
 public class TestRunner {
